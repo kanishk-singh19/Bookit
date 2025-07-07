@@ -76,24 +76,24 @@ function SearchForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col lg:flex-row lg:max-w-6xl lg:mx-auto items-center justify-center space-x-0 lg:space-x-2 space-y-4 lg:space-y-0 rounded-xl bg-[#52796f]/50 backdrop-blur-sm p-4 shadow-lg transition-all duration-300 hover:shadow-xl"
+        className="flex flex-col lg:flex-row lg:max-w-6xl lg:mx-auto items-center justify-center space-x-0 lg:space-x-2 space-y-4 lg:space-y-0 rounded-3xl bg-[#52796f]/50 backdrop-blur-sm p-6 transition-all duration-300"
       >
-        <div className="grid w-full lg:max-w-sm items-center gap-1.5">
+        <div className="grid w-full lg:max-w-sm items-center">
           <FormField
             control={form.control}
             name="location"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-[#2f3e46] flex">
+                <FormLabel className="text-[#2f3e46] flex ">
                   Location
-                  <BedDoubleIcon className="ml-2 h-4 w-4 text-[#2f3e46]" />
+                  {/* <BedDoubleIcon className="ml-2 h-4 w-4 text-[#2f3e46]" /> */}
                 </FormLabel>
                 
                 <FormControl>
                   <Input
                     placeholder="London, UK"
                     {...field}
-                    className="placeholder-[#2f3e46]/70 bg-[#cad2c5]/80 focus:bg-[#cad2c5] focus-visible:ring-[#2f3e46] transition-colors duration-200"
+                    className="placeholder-[#2f3e46]/70 bg-[#cad2c5]/80 focus:bg-[#cad2c5] focus-visible:ring-[#2f3e46] transition-colors duration-200 rounded-lg"
                   />
                 </FormControl>
                 <FormMessage />
@@ -102,7 +102,7 @@ function SearchForm() {
           />
         </div>
         
-        <div className="grid w-full flex-1 lg:max-w-sm items-center gap-1.5">
+        <div className="grid w-full flex-1 lg:max-w-sm items-center">
           <FormField
             control={form.control}
             name="dates"
@@ -114,7 +114,7 @@ function SearchForm() {
                     <FormControl>
                       <Button
                         variant="outline"
-                        className="w-full lg:w-[300px] justify-start text-left font-normal bg-[#cad2c5]/80 hover:bg-[#cad2c5] transition-colors duration-200"
+                        className="w-full lg:w-[300px] justify-start text-left font-normal bg-[#cad2c5]/80 hover:bg-[#cad2c5] transition-colors duration-200 rounded-lg"
                       >
                         <CalendarIcon className="mr-2 h-4 w-4" />
                         {field.value?.from ? (
@@ -172,7 +172,7 @@ function SearchForm() {
                       min="1"
                       max="12"
                       {...field}
-                      className="bg-[#cad2c5]/80 hover:bg-[#cad2c5] focus:bg-[#cad2c5] transition-colors duration-200"
+                      className="bg-[#cad2c5]/80 hover:bg-[#cad2c5] focus:bg-[#cad2c5] transition-colors duration-200 rounded-lg"
                     />
                   </FormControl>
                 </FormItem>
@@ -194,7 +194,7 @@ function SearchForm() {
                       min="0"
                       max="12"
                       {...field}
-                      className="bg-[#cad2c5]/80 hover:bg-[#cad2c5] focus:bg-[#cad2c5] transition-colors duration-200"
+                      className="bg-[#cad2c5]/80 hover:bg-[#cad2c5] focus:bg-[#cad2c5] transition-colors duration-200 rounded-lg"
                     />
                   </FormControl>
                 </FormItem>
@@ -216,7 +216,7 @@ function SearchForm() {
                       min="1"
                       max="12"
                       {...field}
-                      className="bg-[#cad2c5]/80 hover:bg-[#cad2c5] focus:bg-[#cad2c5] transition-colors duration-200"
+                      className="bg-[#cad2c5]/80 hover:bg-[#cad2c5] focus:bg-[#cad2c5] transition-colors duration-200 rounded-lg"
                     />
                   </FormControl>
                 </FormItem>
@@ -226,7 +226,7 @@ function SearchForm() {
           <div className="mt-auto">
             <Button 
               type="submit" 
-              className="bg-[#2f3e46] text-base hover:bg-[#2f3e46]/90 active:scale-95 transition-all duration-200 shadow-md hover:shadow-lg"
+              className="bg-[#2f3e46] text-base hover:bg-[#2f3e46]/90 active:scale-95 transition-all duration-200 shadow-md hover:shadow-lg rounded-lg"
             >
               Search
             </Button>
