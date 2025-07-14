@@ -1,22 +1,24 @@
+// app/search/page.tsx
 import { fetchResults } from "@/lib/fetchResults";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-type Props = {
-  searchParams: SearchParams;
+// You don't need to export this type unless it's used elsewhere
+type SearchParams = {
+  url?: string;
+  group_adults?: string;
+  group_children?: string;
+  no_rooms?: string;
+  checkin?: string;
+  checkout?: string;
 };
 
-export type SearchParams = {
-  url: URL;
-  group_adults: string;
-  group_children: string;
-  no_rooms: string;
-  checkin: string;
-  checkout: string;
-};
-
-async function SearchPage({ searchParams }: Props) {
-  if (!searchParams.url) return notFound();
+export default async function SearchPage({
+  searchParams,
+}: {
+  searchParams?: SearchParams;
+}) {
+  if (!searchParams?.url) return notFound();
 
   const results = await fetchResults(searchParams);
 
@@ -55,7 +57,7 @@ async function SearchPage({ searchParams }: Props) {
               <div className="flex flex-1 space-x-5 justify-between">
                 <div>
                   <Link
-                     href={item.link || '#'}
+                    href={item.link || "#"}
                     className="font-bold text-blue-500 hover:text-blue-600 hover:underline"
                   >
                     {item.title}
@@ -88,5 +90,3 @@ async function SearchPage({ searchParams }: Props) {
     </section>
   );
 }
-
-export default SearchPage;
