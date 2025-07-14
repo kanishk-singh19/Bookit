@@ -32,7 +32,7 @@ const formSchema = z.object({
 
 function SearchForm() {
   const router = useRouter();
-  const [date, setDate] = useState<Date | undefined>(undefined);
+  // const [date, setDate] = useState<Date | undefined>(undefined);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
